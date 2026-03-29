@@ -27,10 +27,11 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(
 	cors({
-		origin: "*",
+		origin: "https://ed-tech-nine-zeta.vercel.app",
 		credentials: true,
 	})
 );
+app.options("*", cors());
 app.use(
 	fileUpload({
 		useTempFiles: true,
@@ -40,7 +41,7 @@ app.use(
 
 // Connecting to cloudinary
 cloudinaryConnect();
-
+// https://ed-tech-prqy.onrender.com
 // Setting up routes
 app.use("/api/v1/auth", userRoutes);
 app.use("/api/v1/profile", profileRoutes);
