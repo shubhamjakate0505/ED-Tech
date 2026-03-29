@@ -26,7 +26,29 @@ database.connect();
 app.use(express.json());
 app.use(cookieParser());
 
+
+const allowedOrigins = [
+  "http://localhost:3000",
+  "https://ed-tech-nine-zeta.vercel.app",
+  "https://ed-tech-puvtohahy-shubhamjakate0505s-projects.vercel.app",
+];
+
 app.use(
+  cors({
+    origin: function (origin, callback) {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
+    credentials: true,
+  })
+);
+
+app.options("*", cors());
+
+/* app.use(
   cors({
     origin: function (origin, callback) {
       // allow requests with no origin (Postman, mobile apps)
@@ -43,7 +65,7 @@ app.use(
 );
 
 
-app.options("*", cors());
+app.options("*", cors()); */
 
 /* app.use(
 	cors({
