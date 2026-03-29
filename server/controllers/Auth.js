@@ -23,7 +23,7 @@ exports.signup = async (req, res) => {
       contactNumber,
       otp,
     } = req.body
-    // Check if All Details are there or not
+    // check all fileds
     if (
       !firstName ||
       !lastName ||
@@ -37,7 +37,7 @@ exports.signup = async (req, res) => {
         message: "All Fields are required",
       })
     }
-    // Check if password and confirm password match
+    // password match 
     if (password !== confirmPassword) {
       return res.status(400).json({
         success: false,
@@ -46,7 +46,7 @@ exports.signup = async (req, res) => {
       })
     }
 
-    // Check if user already exists
+    //check existuser
     const existingUser = await User.findOne({ email })
     if (existingUser) {
       return res.status(400).json({

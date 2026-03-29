@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-// Define the Profile schema
+// Profile schema
 const profileSchema = new mongoose.Schema({
 	gender: {
 		type: String,

@@ -1,3 +1,4 @@
+require("dotenv").config();
 const { instance } = require("../config/razorpay")
 const Course = require("../models/Course")
 const crypto = require("crypto")
@@ -62,6 +63,7 @@ exports.capturePayment = async (req, res) => {
     res.json({
       success: true,
       data: paymentResponse,
+      key: process.env.RAZORPAY_KEY,
     })
   } catch (error) {
     console.log(error)

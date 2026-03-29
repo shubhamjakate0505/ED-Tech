@@ -1,4 +1,4 @@
-// Importing necessary modules and packages
+
 const express = require("express");
 const app = express();
 const userRoutes = require("./routes/user");
@@ -48,7 +48,7 @@ app.use("/api/v1/course", courseRoutes);
 app.use("/api/v1/payment", paymentRoutes);
 app.use("/api/v1/reach", contactUsRoute);
 
-// Testing the server
+
 app.get("/", (req, res) => {
 	return res.json({
 		success: true,
@@ -56,9 +56,8 @@ app.get("/", (req, res) => {
 	});
 });
 
-// Listening to the server
+
 app.listen(PORT, () => {
 	console.log(`App is listening at ${PORT}`);
 });
 
-// End of code.
