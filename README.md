@@ -36,15 +36,3 @@ It provides a seamless experience for students to learn and instructors to teach
 - JWT-based authentication  
 
 ---
-
-## ⚙️ Setup (Optional)  
-
-```bash
-PORT=4000
-MONGODB_URL=your_mongodb_url
-JWT_SECRET=your_secret
-CLOUDINARY_NAME=your_cloud_name
-CLOUDINARY_API_KEY=your_api_key
-CLOUDINARY_API_SECRET=your_secret
-RAZORPAY_KEY=your_key
-RAZORPAY_SECRET=your_secret
