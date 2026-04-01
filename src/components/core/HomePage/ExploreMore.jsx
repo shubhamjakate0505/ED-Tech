@@ -2,6 +2,7 @@
 import { HomePageExplore } from "../../../data/homepage-explore";
 import CourseCard from "./CourseCard";
 import HighlightText from "./HighlightText";
+import { useState } from "react";
 
 const tabsName = [
   "Free",
